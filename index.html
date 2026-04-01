@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仮想通信</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div>
+        <a href="index.html" class="site-title">仮想通信</a>
+        <span class="site-title-sub">kasou tsushin</span>
+      </div>
+      <button class="nav-toggle" aria-label="メニュー" onclick="document.querySelector('.site-nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#latest">最新</a></li>
+          <li><a href="#articles">記事</a></li>
+          <li><a href="#series">連載</a></li>
+          <li><a href="#zadankai">座談会</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero — 表紙的な構成 -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-issue">No. 00 — Pilot Issue</p>
+      <h1>観たもの、読んだもの、<br>聴いたものについて<em>考えたこと</em>を置いていく</h1>
+      <p class="hero-desc">アニメ、映画、音楽、思想、本。ジャンルはばらばらだけど、考えることは続いている。批評も座談会もメモも、ぜんぶここに。</p>
+    </div>
+    <div class="hero-visual">
+      <!-- ここにイラストやドット絵を入れる。imgタグに差し替え可 -->
+      <div class="pixel-deco" aria-hidden="true">
+        <span style="background:#3d6b8e"></span><span></span><span></span><span style="background:#4a8c6f"></span><span style="background:#4a8c6f"></span><span></span><span></span><span style="background:#7b6b9e"></span>
+        <span></span><span style="background:#3d6b8e"></span><span></span><span></span><span></span><span></span><span style="background:#d4714e"></span><span></span>
+        <span></span><span></span><span style="background:#7b6b9e"></span><span></span><span></span><span style="background:#3d6b8e"></span><span></span><span></span>
+        <span style="background:#4a8c6f"></span><span></span><span></span><span style="background:#d4714e"></span><span style="background:#d4714e"></span><span></span><span></span><span style="background:#3d6b8e"></span>
+        <span style="background:#d4714e"></span><span></span><span></span><span style="background:#d4714e"></span><span style="background:#d4714e"></span><span></span><span></span><span style="background:#4a8c6f"></span>
+        <span></span><span></span><span style="background:#3d6b8e"></span><span></span><span></span><span style="background:#7b6b9e"></span><span></span><span></span>
+        <span></span><span style="background:#4a8c6f"></span><span></span><span></span><span></span><span></span><span style="background:#d4714e"></span><span></span>
+        <span style="background:#7b6b9e"></span><span></span><span></span><span style="background:#3d6b8e"></span><span style="background:#4a8c6f"></span><span></span><span></span><span style="background:#3d6b8e"></span>
+      </div>
+      <span class="hero-visual-label">イラスト / ドット絵</span>
+    </div>
+  </section>
+
+  <div class="divider divider-color"><div class="divider-line"></div></div>
+
+  <div class="main-grid">
+    <main>
+
+      <!-- Featured -->
+      <section class="featured" id="latest">
+        <div class="section-head">
+          <span class="section-head-label">Latest</span>
+          <span class="section-head-line"></span>
+        </div>
+        <div class="featured-card">
+          <div class="featured-card-text">
+            <div class="featured-meta">
+              <span class="tag tag-anime">アニメ批評</span>
+              <span class="status">第1稿 — 掲載予定</span>
+            </div>
+            <h3>『けいおん！』における「日常」の仮設性</h3>
+            <p class="excerpt">「日常系」は日常を描写するジャンルではなく、むしろ日常を構成する技法なのではないか。『けいおん！』を、時間・空間・関係性・幼さの4つの軸から読み直し、終わりを知りながら仮設される「もうひとつのフィクションとしての日常」を考える。</p>
+            <a href="article-k-on.html" class="read-btn">記事を読む <span>→</span></a>
+          </div>
+          <div class="article-visual">
+            <span class="article-visual-label">挿絵 / 扉絵<br>を入れる枠</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Articles -->
+      <section class="articles-section" id="articles">
+        <div class="section-head">
+          <span class="section-head-label">Articles</span>
+          <span class="section-head-line"></span>
+        </div>
+
+        <article class="article-item">
+          <span class="article-num">02</span>
+          <div>
+            <span class="tag tag-music">音楽批評</span>
+            <h3><a href="#">Death Gripsはなぜ「意味のない暴力」として快いのか</a></h3>
+            <p>過剰な強度、打ち込みの暴力、ノイズ的な快楽は、意味の否定ではなく生成の回路として働くのではないか。</p>
+          </div>
+          <div class="article-thumb">
+            <span class="article-thumb-label">img</span>
+          </div>
+        </article>
+
+        <article class="article-item">
+          <span class="article-num">03</span>
+          <div>
+            <span class="tag tag-thought">思想メモ</span>
+            <h3><a href="#">音声中心主義のあとで、それでもパロールをどう考えるか</a></h3>
+            <p>デリダの問題系を踏まえつつ、会話・動画・編集された音声のなかで発生する思考について考える。</p>
+          </div>
+          <div class="article-thumb">
+            <span class="article-thumb-label">img</span>
+          </div>
+        </article>
+
+        <article class="article-item">
+          <span class="article-num">04</span>
+          <div>
+            <span class="tag tag-book">書評</span>
+            <h3><a href="#">ドゥルーズ読書メモ――概念はどのように作品へ接続されるか</a></h3>
+            <p>概念を要約するのではなく、作品経験のなかで概念がどう働くかを記述するための覚え書き。</p>
+          </div>
+          <div class="article-thumb">
+            <span class="article-thumb-label">img</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- Series -->
+      <section class="series-section" id="series">
+        <div class="section-head">
+          <span class="section-head-label">Series</span>
+          <span class="section-head-line"></span>
+        </div>
+
+        <article class="series-card">
+          <div class="series-header">
+            <span class="series-name">ゴダールをみる</span>
+            <span class="series-ep">ep. 01</span>
+          </div>
+          <h3><a href="#">『勝手にしやがれ』——まず最初のショットの話から</a></h3>
+          <p>初めてちゃんと観る人と、何度か観てる人で、ゴダールの映画を1本ずつみてごたごた言う連載。第1回はやっぱりここから。</p>
+          <p class="participants">話す人: A, B</p>
+        </article>
+
+        <article class="series-card">
+          <div class="series-header">
+            <span class="series-name">ゴダールをみる</span>
+            <span class="series-ep">ep. 02</span>
+          </div>
+          <h3><a href="#">『気狂いピエロ』——あの色は何なんだという話</a></h3>
+          <p>赤と青がどうとかいう以前に、そもそもこの映画のテンポに体がついていかない、ところから始まる第2回。</p>
+          <p class="participants">話す人: A, B, C</p>
+        </article>
+      </section>
+
+      <!-- 座談会 -->
+      <section class="zadankai-section" id="zadankai">
+        <div class="section-head">
+          <span class="section-head-label">座談会</span>
+          <span class="section-head-line"></span>
+        </div>
+
+        <div class="zadankai-card">
+          <p class="zadankai-label">座談会</p>
+          <h3><a href="#">「好きな作品」の話をするとき、何を話しているのか</a></h3>
+          <p class="zadankai-desc">好きなアニメや音楽の話をしていると、いつの間にか自分の話をしていることがある。作品について語ることと自分について語ることの境界線はどこにあるのか、3人で話してみた。</p>
+          <p class="participants">A, B, C — 2026年春</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <div class="sb" id="about">
+        <p class="sb-head">About</p>
+        <p>アニメ・映画・音楽・思想・本について考えたことを置いておく場所。批評もあれば座談会もメモもある。かたいものもゆるいものも。</p>
+      </div>
+
+      <!-- サイドバーにもビジュアル枠 -->
+      <div class="sb">
+        <div class="sb-visual">
+          <span class="sb-visual-label">イラスト<br>ドット絵 etc.</span>
+        </div>
+      </div>
+
+      <div class="sb">
+        <p class="sb-head">Categories</p>
+        <ul class="sb-list">
+          <li><a href="#">アニメ批評</a></li>
+          <li><a href="#">音楽批評</a></li>
+          <li><a href="#">思想メモ</a></li>
+          <li><a href="#">書評</a></li>
+          <li><a href="#">連載</a></li>
+          <li><a href="#">座談会</a></li>
+        </ul>
+      </div>
+
+      <div class="sb">
+        <p class="sb-head">Upcoming</p>
+        <ul class="sb-list">
+          <li>『けいおん！』論の全文掲載</li>
+          <li>「ゴダールをみる」第3回</li>
+          <li>座談会の第2回</li>
+          <li>プロフィールページ作成</li>
+          <li>記事アーカイブ追加</li>
+        </ul>
+      </div>
+
+      <div class="sb" id="contact">
+        <p class="sb-head">Contact</p>
+        <div class="contact-box">
+          X / note / mail<br>（準備中）
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 仮想通信</p>
+    <p>Pilot Issue</p>
+  </footer>
+
+</body>
+</html>
