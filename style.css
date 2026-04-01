@@ -1,6 +1,5 @@
 /* ===================================
-   仮想通信 — v3
-   More visual, more color, illustration-ready
+   仮想通信 — v4
    =================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;700&family=Source+Code+Pro:ital,wght@0,300;0,400;1,300&display=swap');
@@ -14,9 +13,9 @@
   --accent-warm-rgb: 212, 113, 78;
   --accent-green:    #4a8c6f;
   --accent-violet:   #7b6b9e;
+  --accent-rose:     #b5566a;
 
   --bg:           #fafaf8;
-  --bg-warm:      #fdf8f5;
   --fg:           #111111;
   --fg-body:      #2a2a28;
   --fg-sub:       #6b6b66;
@@ -44,7 +43,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* grain — subtle */
 body::before {
   content: '';
   position: fixed;
@@ -106,7 +104,7 @@ img { max-width: 100%; display: block; }
   display: block; width: 18px; height: 1px; background: var(--fg); margin: 5px 0;
 }
 
-/* === Hero — 群像の表紙的なインパクト === */
+/* === Hero === */
 .hero {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -116,11 +114,6 @@ img { max-width: 100%; display: block; }
   gap: 3rem;
   align-items: center;
 }
-
-.hero-text {
-  /* text side */
-}
-
 .hero-issue {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -138,7 +131,6 @@ img { max-width: 100%; display: block; }
   width: 28px; height: 1px;
   background: var(--issue-color);
 }
-
 .hero h1 {
   font-family: var(--font-mincho);
   font-size: clamp(1.7rem, 4vw, 2.6rem);
@@ -151,7 +143,6 @@ img { max-width: 100%; display: block; }
   font-style: normal;
   color: var(--issue-color);
 }
-
 .hero-desc {
   margin-top: 1.5rem;
   font-size: 0.84rem;
@@ -160,7 +151,6 @@ img { max-width: 100%; display: block; }
   color: var(--fg-sub);
 }
 
-/* ヒーローのイラスト枠 */
 .hero-visual {
   aspect-ratio: 4 / 5;
   background: var(--issue-pale);
@@ -173,8 +163,6 @@ img { max-width: 100%; display: block; }
   position: relative;
   overflow: hidden;
 }
-
-/* ドット絵風デコレーション */
 .hero-visual::before {
   content: '';
   position: absolute;
@@ -185,7 +173,6 @@ img { max-width: 100%; display: block; }
   background-size: 12px 12px;
   opacity: 0.5;
 }
-
 .hero-visual-label {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -193,8 +180,6 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.1em;
   z-index: 1;
 }
-
-/* ドット絵的な装飾パターン — 純CSS */
 .pixel-deco {
   width: 80px; height: 80px;
   z-index: 1;
@@ -203,9 +188,7 @@ img { max-width: 100%; display: block; }
   grid-template-rows: repeat(8, 1fr);
   gap: 1px;
 }
-.pixel-deco span {
-  border-radius: 1px;
-}
+.pixel-deco span { border-radius: 1px; }
 
 /* === Divider === */
 .divider {
@@ -214,16 +197,15 @@ img { max-width: 100%; display: block; }
   padding: 0 var(--gap);
 }
 .divider-line { height: 1px; background: var(--border); }
-
-/* 色つきディバイダー */
 .divider-color .divider-line {
   height: 3px;
   background: linear-gradient(
     90deg,
-    var(--issue-color) 0%, var(--issue-color) 30%,
-    var(--accent-warm) 30%, var(--accent-warm) 55%,
-    var(--accent-green) 55%, var(--accent-green) 75%,
-    var(--accent-violet) 75%, var(--accent-violet) 100%
+    var(--issue-color) 0%, var(--issue-color) 25%,
+    var(--accent-warm) 25%, var(--accent-warm) 45%,
+    var(--accent-green) 45%, var(--accent-green) 65%,
+    var(--accent-violet) 65%, var(--accent-violet) 80%,
+    var(--accent-rose) 80%, var(--accent-rose) 100%
   );
   opacity: 0.6;
 }
@@ -258,7 +240,6 @@ img { max-width: 100%; display: block; }
 
 /* === Featured === */
 .featured { margin-bottom: 3.5rem; }
-
 .featured-card {
   padding: 0;
   display: grid;
@@ -266,11 +247,7 @@ img { max-width: 100%; display: block; }
   gap: 2rem;
   align-items: start;
 }
-
-.featured-card-text {
-  padding: 1.5rem 0;
-}
-
+.featured-card-text { padding: 1.5rem 0; }
 .featured-meta {
   display: flex;
   align-items: center;
@@ -319,7 +296,6 @@ img { max-width: 100%; display: block; }
 }
 .read-btn:hover { gap: 1rem; }
 
-/* 記事のイラスト枠 */
 .article-visual {
   aspect-ratio: 3 / 4;
   background: var(--issue-pale);
@@ -327,14 +303,12 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   margin-top: 1.5rem;
 }
 .article-visual-label {
   font-family: var(--font-mono);
   font-size: 0.55rem;
   color: rgba(var(--issue-color-rgb), 0.4);
-  letter-spacing: 0.08em;
   text-align: center;
   line-height: 1.6;
 }
@@ -359,10 +333,11 @@ img { max-width: 100%; display: block; }
 }
 .article-item .tag { margin-bottom: 0.4rem; }
 
-.tag-anime   { background: #3d6b8e; }
-.tag-music   { background: var(--accent-green); }
-.tag-thought { background: var(--accent-violet); }
-.tag-book    { background: var(--accent-warm); }
+.tag-critique { background: var(--issue-color); }
+.tag-intro    { background: var(--accent-green); }
+.tag-review   { background: var(--accent-warm); }
+.tag-zadankai { background: var(--accent-violet); }
+.tag-history  { background: var(--accent-rose); }
 
 .article-item h3 {
   font-family: var(--font-mincho);
@@ -380,8 +355,6 @@ img { max-width: 100%; display: block; }
   line-height: 1.9;
   color: var(--fg-sub);
 }
-
-/* 記事リスト内の小さなイラスト枠 */
 .article-thumb {
   aspect-ratio: 1;
   background: var(--border-faint);
@@ -398,67 +371,72 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 
-/* === Series === */
-.series-section { margin-bottom: 3.5rem; }
+/* === 入門 (Intro/Gateway) === */
+.intro-section { margin-bottom: 3.5rem; }
 
-.series-card {
-  padding: 1.4rem 0;
-  border-top: 1px solid var(--border-faint);
+.intro-card {
+  padding: 1.6rem 1.8rem;
+  border: 1px solid var(--border);
+  background: rgba(74, 140, 111, 0.03);
+  position: relative;
 }
-.series-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.8rem;
-  margin-bottom: 0.4rem;
+.intro-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 3px; height: 100%;
+  background: var(--accent-green);
 }
-.series-name {
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: var(--fg-muted);
-}
-.series-ep {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  font-weight: 300;
-  color: var(--fg-muted);
-}
-.series-card h3 {
-  font-size: 1rem;
+.intro-card h3 {
+  font-family: var(--font-gothic);
+  font-size: 1.08rem;
   font-weight: 500;
   line-height: 1.7;
   color: var(--fg);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
-.series-card h3 a { color: inherit; transition: color 0.2s; }
-.series-card h3 a:hover { color: var(--issue-color); }
-.series-card p {
-  font-size: 0.78rem;
+.intro-card h3 a { color: inherit; transition: color 0.2s; }
+.intro-card h3 a:hover { color: var(--accent-green); }
+.intro-card .intro-desc {
+  font-size: 0.8rem;
   font-weight: 300;
-  line-height: 1.9;
+  line-height: 2;
   color: var(--fg-sub);
 }
-.series-card .participants {
+.intro-card .participants {
   font-family: var(--font-mono);
   font-size: 0.62rem;
   color: var(--fg-muted);
-  margin-top: 0.4rem;
+  margin-top: 0.6rem;
+}
+.intro-card .intro-books {
+  margin-top: 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--fg-sub);
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-faint);
+}
+.intro-card .intro-books strong {
+  font-weight: 500;
+  color: var(--fg);
 }
 
 /* === 座談会 === */
-.zadankai-section { margin-bottom: 2rem; }
+.zadankai-section { margin-bottom: 3.5rem; }
 
 .zadankai-card {
   padding: 1.6rem 1.8rem;
-  border-left: 3px solid var(--accent-warm);
-  background: rgba(var(--accent-warm-rgb), 0.04);
+  border-left: 3px solid var(--accent-violet);
+  background: rgba(123, 107, 158, 0.03);
+  margin-bottom: 1rem;
 }
 .zadankai-label {
   font-family: var(--font-gothic-sharp);
   font-size: 0.58rem;
   font-weight: 500;
   letter-spacing: 0.15em;
-  color: var(--accent-warm);
+  color: var(--accent-violet);
   margin-bottom: 0.5rem;
 }
 .zadankai-card h3 {
@@ -469,7 +447,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 0.5rem;
 }
 .zadankai-card h3 a { color: inherit; transition: color 0.2s; }
-.zadankai-card h3 a:hover { color: var(--accent-warm); }
+.zadankai-card h3 a:hover { color: var(--accent-violet); }
 .zadankai-card .zadankai-desc {
   font-size: 0.8rem;
   font-weight: 300;
@@ -481,6 +459,36 @@ img { max-width: 100%; display: block; }
   font-size: 0.62rem;
   color: var(--fg-muted);
   margin-top: 0.6rem;
+}
+
+/* === インターネット個人史 === */
+.history-section { margin-bottom: 3.5rem; }
+
+.history-card {
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--border-faint);
+}
+.history-card h3 {
+  font-family: var(--font-gothic);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--fg);
+  margin-bottom: 0.3rem;
+}
+.history-card h3 a { color: inherit; transition: color 0.2s; }
+.history-card h3 a:hover { color: var(--accent-rose); }
+.history-card p {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--fg-sub);
+}
+.history-card .author {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--fg-muted);
+  margin-top: 0.4rem;
 }
 
 /* === Sidebar === */
@@ -526,7 +534,6 @@ img { max-width: 100%; display: block; }
 .sb-list a { transition: color 0.2s; }
 .sb-list a:hover { color: var(--issue-color); }
 
-/* sidebar visual slot */
 .sb-visual {
   aspect-ratio: 4 / 3;
   background: var(--border-faint);
@@ -580,8 +587,6 @@ img { max-width: 100%; display: block; }
   gap: 2.5rem;
   align-items: start;
 }
-.article-header-text { /* text column */ }
-
 .article-meta {
   display: flex;
   align-items: center;
@@ -608,8 +613,6 @@ img { max-width: 100%; display: block; }
   line-height: 2.1;
   color: var(--fg-sub);
 }
-
-/* article header visual */
 .article-header-visual {
   aspect-ratio: 3 / 4;
   background: var(--issue-pale);
@@ -619,7 +622,6 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   margin-top: 1.2rem;
 }
-
 .header-divider {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -636,7 +638,6 @@ img { max-width: 100%; display: block; }
   padding: 2.5rem var(--gap) 5rem;
 }
 
-/* TOC */
 .toc { position: sticky; top: 4.5rem; align-self: start; }
 .toc-head {
   font-family: var(--font-mono);
@@ -660,7 +661,6 @@ img { max-width: 100%; display: block; }
 .toc li:hover { border-left-color: var(--issue-color); color: var(--fg); }
 .toc li a { color: inherit; }
 
-/* Article prose */
 .article-body { max-width: 680px; }
 .article-body h2 {
   font-family: var(--font-mincho);
@@ -709,8 +709,6 @@ img { max-width: 100%; display: block; }
   color: var(--fg-sub);
   margin-bottom: 0;
 }
-
-/* 本文中のイラスト挿入枠 */
 .inline-visual {
   margin: 2.5rem 0;
   aspect-ratio: 16 / 9;
@@ -727,7 +725,6 @@ img { max-width: 100%; display: block; }
   text-align: center;
   line-height: 1.6;
 }
-
 .section-note {
   font-size: 0.76rem;
   font-weight: 300;
@@ -793,6 +790,6 @@ img { max-width: 100%; display: block; }
   .article-item { grid-template-columns: 1fr; gap: 0; }
   .article-num { display: none; }
   .featured-card h3 { font-size: 1.2rem; }
-  .zadankai-card { padding: 1.2rem 1.4rem; }
+  .zadankai-card, .intro-card { padding: 1.2rem 1.4rem; }
   .site-footer { flex-direction: column; gap: 0.5rem; }
 }
